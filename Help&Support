@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LIBSEE Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+<h1>LIBSEE Support</h1>
+
+<p>If you need help using LIBSEE, feel free to contact us.</p>
+
+<h3>Contact</h3>
+<p>Email: support@libsee.app</p>
+
+<h3>About LIBSEE</h3>
+<p>
+LIBSEE helps you discover local clothing shops near you. Browse collections,
+explore stores, and support local businesses easily.
+</p>
+
+<h3>Common Issues</h3>
+<ul>
+  <li>Make sure location services are enabled to see nearby shops.</li>
+  <li>Restart the app if content is not loading.</li>
+</ul>
+
+<p>We’ll respond as soon as possible.</p>
+
+</body>
+</html>
