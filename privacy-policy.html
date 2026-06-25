@@ -1,196 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LIBSEE — Privacy & Policies</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIBSEE — Policies</title>
 
-  <style>
-    :root {
-      --primary: #21393B;
-      --bg: #FAF9F6;
-      --text: #1A1A1A;
-      --muted: #6B7280;
-      --accent: #E2DBC2;
-    }
+<style>
+:root {
+  --primary:#21393B;
+  --bg:#FAF9F6;
+  --text:#1A1A1A;
+  --accent:#E2DBC2;
+  --muted:#6B7280;
+}
 
-    * { box-sizing: border-box; }
+body {
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
+header {
+  background:var(--primary);
+  color:var(--accent);
+  padding:25px;
+  text-align:center;
+}
 
-    header {
-      background: var(--primary);
-      color: var(--accent);
-      padding: 30px 20px;
-      text-align: center;
-    }
+button {
+  margin:5px;
+  padding:8px 12px;
+  border:none;
+  cursor:pointer;
+  background:var(--accent);
+  color:var(--primary);
+  font-weight:bold;
+}
 
-    header h1 { margin: 0; font-size: 32px; }
+main {
+  max-width:800px;
+  margin:auto;
+  padding:20px;
+}
 
-    header p { margin: 5px 0 0; opacity: 0.8; }
+.section { display:none; }
+.active { display:block; }
 
-    .lang-switch {
-      margin-top: 15px;
-    }
+.rtl { direction:rtl; text-align:right; }
 
-    .lang-switch button {
-      margin: 0 5px;
-      padding: 8px 14px;
-      border: none;
-      cursor: pointer;
-      background: var(--accent);
-      color: var(--primary);
-      border-radius: 6px;
-      font-weight: bold;
-    }
+h2 { color:var(--primary); margin-top:25px; }
 
-    main {
-      max-width: 760px;
-      margin: auto;
-      padding: 30px 20px 80px;
-    }
-
-    h2 { color: var(--primary); margin-top: 30px; }
-
-    h3 { color: var(--primary); }
-
-    .section { display: none; }
-
-    .active { display: block; }
-
-    .last-updated {
-      color: var(--muted);
-      font-size: 14px;
-      font-style: italic;
-    }
-
-    footer {
-      background: var(--primary);
-      color: var(--accent);
-      text-align: center;
-      padding: 20px;
-    }
-
-    /* RTL support */
-    .rtl {
-      direction: rtl;
-      text-align: right;
-    }
-  </style>
+footer {
+  text-align:center;
+  padding:20px;
+  background:var(--primary);
+  color:var(--accent);
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>LIBSEE</h1>
-  <p>Privacy Policy & Refund Policy</p>
+<h1>LIBSEE</h1>
+<p>Privacy Policy & Refund Policy</p>
 
-  <div class="lang-switch">
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('he')">HE</button>
-    <button onclick="setLang('ar')">AR</button>
-  </div>
+<button onclick="show('en')">EN</button>
+<button onclick="show('he')">HE</button>
+<button onclick="show('ar')">AR</button>
 </header>
 
 <main>
 
-  <p class="last-updated">Last updated: April 11, 2026</p>
+<!-- ENGLISH FULL -->
+<div id="en" class="section active">
 
-  <!-- ENGLISH -->
-  <div id="en" class="section active">
-    <p><strong>Libsee Marketplace LTD</strong> operates the LIBSEE mobile application...</p>
+<p><strong>Libsee Marketplace LTD</strong> operates the LIBSEE mobile application. This page informs you of our policies regarding data collection, usage, cancellation, and refunds.</p>
 
-    <h2>1. Information We Collect</h2>
-    <ul>
-      <li>Account Information: Name, email, phone, etc.</li>
-      <li>Location Data: Used for nearby shops</li>
-      <li>Orders & Wishlist</li>
-      <li>Device Information</li>
-    </ul>
+<h2>1. Information We Collect</h2>
+<ul>
+<li>Account Information: Name, email, phone, gender, age, height, weight (optional)</li>
+<li>Location Data: used for nearby shops</li>
+<li>Wishlist & Orders</li>
+<li>Device Information</li>
+</ul>
 
-    <h2>6. Cancellation and Refund Policy</h2>
-    <p>Customers may cancel within 3 hours...</p>
+<h2>2. How We Use Information</h2>
+<ul>
+<li>Provide service</li>
+<li>Show nearby shops</li>
+<li>Process orders</li>
+<li>Recommendations</li>
+<li>Updates</li>
+</ul>
 
-    <h2>7. Disclaimer</h2>
-    <p>Libsee is not responsible for product quality, availability, fulfillment, or delivery by merchants.</p>
+<h2>3. Data Security</h2>
+<p>Stored securely using Supabase. We do not sell data.</p>
 
-    <h2>8. Customer Support</h2>
-    <ul>
-      <li>Email: support@libsee.co</li>
-      <li>Phone: +97249236660</li>
-    </ul>
-  </div>
+<h2>4. Third Party Services</h2>
+<ul>
+<li>Supabase</li>
+<li>OpenStreetMap</li>
+<li>Google Fonts</li>
+</ul>
 
-  <!-- HEBREW -->
-  <div id="he" class="section rtl">
-    <p><strong>ליבסי מרקטפלייס בע״מ</strong> מפעילה את אפליקציית LIBSEE...</p>
+<h2>5. Your Rights</h2>
+<ul>
+<li>Access data</li>
+<li>Correct data</li>
+<li>Delete account</li>
+<li>Disable location</li>
+</ul>
 
-    <h2>1. מידע שאנו אוספים</h2>
-    <ul>
-      <li>פרטי חשבון: שם, אימייל, טלפון וכו'</li>
-      <li>נתוני מיקום</li>
-      <li>הזמנות ורשימת משאלות</li>
-      <li>מידע על המכשיר</li>
-    </ul>
+<h2>6. Cancellation and Refund Policy</h2>
 
-    <h2>6. ביטול והחזר כספי</h2>
-    <p>ניתן לבטל הזמנה תוך 3 שעות...</p>
+<h3>6.1 Order Cancellation</h3>
+<p>Cancel within 3 hours.</p>
 
-    <h2>7. הבהרה</h2>
-    <p>ליבסי אינה אחראית על איכות, זמינות או אספקת מוצרים על ידי הסוחרים.</p>
+<h3>6.2 Refunds</h3>
+<p>Full refund if within 3 hours.</p>
 
-    <h2>8. שירות לקוחות</h2>
-    <ul>
-      <li>אימייל: support@libsee.co</li>
-      <li>טלפון: +97249236660</li>
-    </ul>
-  </div>
+<h3>6.3 Processing Orders</h3>
+<p>After 3 hours cannot cancel.</p>
 
-  <!-- ARABIC -->
-  <div id="ar" class="section rtl">
-    <p><strong>شركة Libsee Marketplace LTD</strong> تشغّل تطبيق LIBSEE...</p>
+<h3>6.4 Defective Products</h3>
+<p>Report within 48 hours.</p>
 
-    <h2>1. المعلومات التي نجمعها</h2>
-    <ul>
-      <li>معلومات الحساب</li>
-      <li>بيانات الموقع</li>
-      <li>الطلبات وقائمة الرغبات</li>
-      <li>معلومات الجهاز</li>
-    </ul>
+<h2>7. Disclaimer</h2>
+<p>Libsee is not responsible for product quality, availability, fulfillment, or delivery. Merchants are fully responsible.</p>
 
-    <h2>6. سياسة الإلغاء والاسترداد</h2>
-    <p>يمكن إلغاء الطلب خلال 3 ساعات...</p>
+<h2>8. Customer Support</h2>
+<p>Email: support@libsee.co<br>Phone: +97249236660</p>
 
-    <h2>7. إخلاء المسؤولية</h2>
-    <p>ليست Libsee مسؤولة عن جودة المنتجات أو توفرها أو التوصيل أو تنفيذ الطلبات من قبل التجار.</p>
+</div>
 
-    <h2>8. دعم العملاء</h2>
-    <ul>
-      <li>البريد الإلكتروني: support@libsee.co</li>
-      <li>الهاتف: +97249236660</li>
-    </ul>
-  </div>
+<!-- HEBREW FULL -->
+<div id="he" class="section rtl">
+
+<p><strong>Libsee Marketplace LTD</strong> מפעילה את אפליקציית LIBSEE...</p>
+
+<h2>1. מידע שנאסף</h2>
+<ul>
+<li>פרטי חשבון</li>
+<li>נתוני מיקום</li>
+<li>הזמנות</li>
+<li>מידע מכשיר</li>
+</ul>
+
+<h2>2. שימוש במידע</h2>
+<ul>
+<li>שירות</li>
+<li>חנויות קרובות</li>
+<li>עיבוד הזמנות</li>
+<li>המלצות</li>
+<li>עדכונים</li>
+</ul>
+
+<h2>3. אבטחת מידע</h2>
+<p>נשמר בצורה מאובטחת. לא נמכרים נתונים.</p>
+
+<h2>6. ביטול והחזר</h2>
+<p>ניתן לבטל תוך 3 שעות.</p>
+
+<h2>7. הבהרה</h2>
+<p>ליבסי אינה אחראית על מוצרים או משלוחים.</p>
+
+<h2>8. שירות לקוחות</h2>
+<p>אימייל: support@libsee.co<br>טלפון: +97249236660</p>
+
+</div>
+
+<!-- ARABIC FULL -->
+<div id="ar" class="section rtl">
+
+<p><strong>شركة Libsee Marketplace LTD</strong> تدير تطبيق LIBSEE...</p>
+
+<h2>1. المعلومات التي نجمعها</h2>
+<ul>
+<li>معلومات الحساب</li>
+<li>بيانات الموقع</li>
+<li>الطلبات</li>
+<li>معلومات الجهاز</li>
+</ul>
+
+<h2>2. استخدام المعلومات</h2>
+<ul>
+<li>تقديم الخدمة</li>
+<li>عرض المتاجر القريبة</li>
+<li>معالجة الطلبات</li>
+<li>التوصيات</li>
+<li>التحديثات</li>
+</ul>
+
+<h2>3. الأمان</h2>
+<p>يتم تخزين البيانات بشكل آمن.</p>
+
+<h2>6. سياسة الإلغاء</h2>
+<p>يمكن الإلغاء خلال 3 ساعات.</p>
+
+<h2>7. إخلاء المسؤولية</h2>
+<p>ليست Libsee مسؤولة عن المنتجات أو التوصيل أو الجودة.</p>
+
+<h2>8. الدعم</h2>
+<p>support@libsee.co<br>+97249236660</p>
+
+</div>
 
 </main>
 
 <footer>
-  &copy; 2026 Libsee Marketplace LTD. All rights reserved.
+© 2026 Libsee Marketplace LTD
 </footer>
 
 <script>
-  function setLang(lang) {
-    document.querySelectorAll('.section').forEach(el => {
-      el.classList.remove('active');
-    });
-    document.getElementById(lang).classList.add('active');
-  }
+function show(lang){
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(lang).classList.add('active');
+}
 </script>
 
 </body>
