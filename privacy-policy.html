@@ -29,14 +29,22 @@ header {
   text-align:center;
 }
 
+header h1 { margin:0 0 6px; letter-spacing:1px; }
+header p { margin:0 0 12px; }
+
 button {
   margin:5px;
-  padding:8px 12px;
-  border:none;
+  padding:8px 14px;
+  border:2px solid transparent;
+  border-radius:6px;
   cursor:pointer;
   background:var(--accent);
   color:var(--primary);
   font-weight:bold;
+}
+
+button.active-btn {
+  border-color:#fff;
 }
 
 main {
@@ -50,13 +58,36 @@ main {
 
 .rtl { direction:rtl; text-align:right; }
 
-h2 { color:var(--primary); margin-top:25px; }
+h2 { color:var(--primary); margin-top:28px; border-bottom:1px solid var(--accent); padding-bottom:4px; }
+h3 { color:var(--primary); margin-top:18px; }
+
+.muted { color:var(--muted); font-size:0.9em; }
+
+.note {
+  background:#fff;
+  border-left:4px solid var(--accent);
+  padding:10px 14px;
+  margin:14px 0;
+  font-size:0.92em;
+  color:var(--muted);
+}
+.rtl .note { border-left:none; border-right:4px solid var(--accent); }
+
+.contact-box {
+  background:#fff;
+  border:1px solid var(--accent);
+  border-radius:8px;
+  padding:14px 18px;
+}
+
+a { color:var(--primary); }
 
 footer {
   text-align:center;
   padding:20px;
   background:var(--primary);
   color:var(--accent);
+  font-size:0.9em;
 }
 </style>
 </head>
@@ -65,11 +96,11 @@ footer {
 
 <header>
 <h1>LIBSEE</h1>
-<p>Privacy Policy & Refund Policy</p>
+<p>Privacy Policy · Terms of Service · Cancellation &amp; Refund Policy</p>
 
-<button onclick="show('en')">EN</button>
-<button onclick="show('he')">HE</button>
-<button onclick="show('ar')">AR</button>
+<button id="btn-en" class="active-btn" onclick="show('en')">EN</button>
+<button id="btn-he" onclick="show('he')">HE</button>
+<button id="btn-ar" onclick="show('ar')">AR</button>
 </header>
 
 <main>
@@ -77,156 +108,324 @@ footer {
 <!-- ================= ENGLISH ================= -->
 <div id="en" class="section active">
 
-<p><strong>Libsee Marketplace LTD</strong> operates the LIBSEE mobile application. This page informs you of our policies regarding data collection, usage, cancellation, and refunds.</p>
+<p class="muted">Last updated: 1 July 2026</p>
 
-<h2>1. Information We Collect</h2>
+<p><strong>Libsee Marketplace LTD</strong> operates the LIBSEE mobile application ("LIBSEE", "we", "us"). LIBSEE is a marketplace that connects shoppers with local clothing shops, letting users discover nearby stores and order clothing and related products. This page sets out our Privacy Policy, Terms of Service, and Cancellation &amp; Refund Policy.</p>
+
+<h2>Privacy Policy</h2>
+
+<h3>1. Information We Collect</h3>
 <ul>
-<li>Account Information: Name, email, phone, gender, age, height, weight (optional)</li>
-<li>Location Data: used for nearby shops</li>
-<li>Wishlist & Orders</li>
-<li>Device Information</li>
+<li><strong>Account information:</strong> name, email, and phone number.</li>
+<li><strong>Optional profile details:</strong> gender, age, height, and weight (used only to improve size and product recommendations; you may leave these blank).</li>
+<li><strong>Location data:</strong> your device location, used to show nearby shops (only while you use the app; you can disable it in your device settings).</li>
+<li><strong>Delivery addresses</strong> you add for orders.</li>
+<li><strong>Wishlist and order history.</strong></li>
+<li><strong>Push notification token</strong> (to send you order and account updates).</li>
+<li><strong>Device and diagnostic information</strong> (device type, app version, and crash reports).</li>
+</ul>
+<p>We do <strong>not</strong> collect or store your full payment card number. Card details are entered directly with our payment provider (see section 4).</p>
+
+<h3>2. How We Use Your Information</h3>
+<ul>
+<li>Provide and operate the service and your account.</li>
+<li>Show shops near you.</li>
+<li>Process, fulfil, and support your orders.</li>
+<li>Provide personalised product recommendations.</li>
+<li>Send you service and order updates (you can opt out of non-essential messages at any time).</li>
+<li>Maintain security and diagnose technical problems.</li>
 </ul>
 
-<h2>2. How We Use Information</h2>
+<h3>3. Data Security</h3>
+<p>Your data is stored securely using Supabase and protected with access controls and encryption in transit. We do not sell your personal data. Payments are handled entirely by a PCI DSS-compliant payment provider, so LIBSEE never receives or stores your full card number.</p>
+
+<h3>4. Third-Party Services</h3>
 <ul>
-<li>Provide service</li>
-<li>Show nearby shops</li>
-<li>Process orders</li>
-<li>Recommendations</li>
-<li>Updates</li>
+<li><strong>Supabase</strong> — database, authentication, and file storage hosting.</li>
+<li><strong>Allpay / Tranzila</strong> — payment processing. Card details are entered on the provider's secure payment page; LIBSEE does not see or store them.</li>
+<li><strong>Google Firebase</strong> — Cloud Messaging (push notifications) and Crashlytics (crash and diagnostic reports).</li>
+<li><strong>OpenStreetMap</strong> — map display.</li>
+<li><strong>Google Fonts</strong> — fonts.</li>
 </ul>
 
-<h2>3. Data Security</h2>
-<p>Stored securely using Supabase. We do not sell data.</p>
+<h3>5. Cookies and Similar Technologies</h3>
+<p>The LIBSEE app and this website use only essential storage needed to keep you signed in and to remember your preferences. We do not use advertising or third-party tracking cookies.</p>
 
-<h2>4. Third Party Services</h2>
+<h3>6. Data Retention</h3>
+<p>We keep your personal data for as long as your account is active and as needed to provide the service. Order and transaction records may be kept longer where required by law (for example, tax and accounting obligations). When you delete your account, we delete or anonymise your personal data unless we must retain it by law.</p>
+
+<h3>7. International Data Transfers</h3>
+<p>Some of our service providers (such as Supabase and Google) may process or store data on servers located outside Israel. Where this happens, we take steps to ensure your data receives an adequate level of protection.</p>
+
+<h3>8. Children's Privacy</h3>
+<p>LIBSEE is not intended for children under 16. We do not knowingly collect personal data from children under 16. If you believe a child has provided us with personal data, please contact us and we will delete it.</p>
+
+<h3>9. Your Rights</h3>
 <ul>
-<li>Supabase</li>
-<li>OpenStreetMap</li>
-<li>Google Fonts</li>
+<li>Access the personal data we hold about you.</li>
+<li>Correct inaccurate data.</li>
+<li>Delete your account and associated data.</li>
+<li>Disable location access at any time from your device settings.</li>
+<li>Opt out of non-essential notifications.</li>
+</ul>
+<p>To exercise any of these rights, contact us using the details in section 15. We handle personal data in accordance with Israel's Protection of Privacy Law, 5741-1981.</p>
+
+<h3>10. Changes to This Policy</h3>
+<p>We may update these policies from time to time. The "Last updated" date at the top of this page reflects the latest version, and material changes will be communicated within the app.</p>
+
+<h2>Terms of Service</h2>
+
+<h3>11. Using LIBSEE</h3>
+<p>LIBSEE is a marketplace platform. Products are sold by independent merchants ("Merchants"), not by Libsee Marketplace LTD. When you place an order, your contract of sale for the product is with the Merchant. LIBSEE facilitates discovery, ordering, and payment.</p>
+<ul>
+<li>You must provide accurate account information and be legally able to enter into a purchase.</li>
+<li>Merchants are responsible for their product descriptions, pricing, availability, licensing (where required), fulfilment, and delivery.</li>
+<li>You agree not to misuse the app, attempt unauthorised access, or use it for unlawful purposes.</li>
+<li>Prices and product availability are set by Merchants and may change.</li>
+</ul>
+<p>These Terms are governed by the laws of the State of Israel, and disputes are subject to the competent courts of Israel.</p>
+
+<h2>Cancellation &amp; Refund Policy</h2>
+
+<h3>12. Order Cancellation</h3>
+<p>You may cancel an order within <strong>3 hours</strong> of placing it through the app. After 3 hours the order is forwarded to the Merchant for processing and can no longer be cancelled through the app.</p>
+
+<h3>13. Refunds and Returns</h3>
+<ul>
+<li>If you cancel within 3 hours, a <strong>full refund</strong> is issued to the original payment method.</li>
+<li>Each product also has a <strong>return window set by the Merchant</strong>, shown on the product page before you buy: <em>non-refundable, 1 week, 2 weeks, or 1 month</em> from receipt. Eligible items returned within that window are refunded after the return is confirmed.</li>
+<li>Refunds are made to the original payment method via our payment provider and may take several business days to appear.</li>
 </ul>
 
-<h2>5. Your Rights</h2>
-<ul>
-<li>Access data</li>
-<li>Correct data</li>
-<li>Delete account</li>
-<li>Disable location</li>
-</ul>
+<h3>14. Defective or Incorrect Products</h3>
+<p>If you receive a defective, damaged, or incorrect product, contact customer support within <strong>48 hours</strong> of receiving the order. After review, an appropriate refund or resolution will be provided. This does not affect your rights under applicable consumer-protection law.</p>
 
-<h2>6. Cancellation and Refund Policy – Libsee</h2>
+<h3>15. Disclaimer</h3>
+<p>LIBSEE provides the marketplace platform only and is not responsible for product quality, availability, fulfilment, or delivery. Merchants are fully responsible for the products they sell.</p>
 
-<h3>1. Order Cancellation</h3>
-<p>Customers may cancel their order within 3 hours from the time the order was placed through the application.</p>
-
-<h3>2. Refunds</h3>
-<p>If the order is canceled within 3 hours, a full refund will be issued to the original payment method used for the purchase.</p>
-
-<h3>3. Orders Under Processing</h3>
-<p>After 3 hours from the time of purchase, the order is forwarded to the merchant for processing and can no longer be canceled through the application.</p>
-
-<h3>4. Defective or Incorrect Products</h3>
-<p>If a customer receives a defective, damaged, or incorrect product, they must contact customer support within 48 hours of receiving the order. After review, an appropriate refund or resolution will be provided.</p>
-
-<h2>7. Disclaimer</h2>
-<p>Libsee is not responsible for product quality, availability, fulfillment, or delivery. Merchants are fully responsible.</p>
-
-<h2>8. Customer Support</h2>
-<p>Email: support@libsee.co<br>Phone: +97249236660</p>
+<h2>16. Business Details &amp; Contact</h2>
+<div class="contact-box">
+<p><strong>Libsee Marketplace LTD</strong><br>
+Address: Miriam Al Adra, Sakhnin 30810, Israel<br>
+Email: <a href="mailto:support@libsee.co">support@libsee.co</a><br>
+Phone / WhatsApp: <a href="tel:+97249236660">+972-4-923-6660</a></p>
+</div>
 
 </div>
 
 <!-- ================= HEBREW ================= -->
 <div id="he" class="section rtl">
 
-<p><strong>Libsee Marketplace LTD</strong> מפעילה את אפליקציית LIBSEE...</p>
+<p class="muted">עודכן לאחרונה: 1 ביולי 2026</p>
 
-<h2>1. מידע שנאסף</h2>
+<p><strong>Libsee Marketplace LTD</strong> מפעילה את אפליקציית LIBSEE ("ליבסי", "אנחנו"). ליבסי היא פלטפורמת מרקטפלייס המחברת בין קונים לבין חנויות בגדים מקומיות, ומאפשרת למשתמשים לגלות חנויות בקרבתם ולהזמין בגדים ומוצרים נלווים. עמוד זה מפרט את מדיניות הפרטיות, תנאי השימוש ומדיניות הביטול וההחזרים שלנו.</p>
+
+<h2>מדיניות פרטיות</h2>
+
+<h3>1. מידע שאנו אוספים</h3>
 <ul>
-<li>פרטי חשבון</li>
-<li>נתוני מיקום</li>
-<li>הזמנות</li>
-<li>מידע מכשיר</li>
+<li><strong>פרטי חשבון:</strong> שם, אימייל ומספר טלפון.</li>
+<li><strong>פרטי פרופיל אופציונליים:</strong> מגדר, גיל, גובה ומשקל (משמשים רק לשיפור המלצות מידה ומוצרים; ניתן להשאיר ריקים).</li>
+<li><strong>נתוני מיקום:</strong> מיקום המכשיר, לצורך הצגת חנויות קרובות (רק בזמן השימוש באפליקציה; ניתן לכבות בהגדרות המכשיר).</li>
+<li><strong>כתובות למשלוח</strong> שאתם מוסיפים להזמנות.</li>
+<li><strong>רשימת משאלות והיסטוריית הזמנות.</strong></li>
+<li><strong>אסימון להתראות (Push)</strong> לצורך שליחת עדכוני הזמנות וחשבון.</li>
+<li><strong>מידע מכשיר ואבחון</strong> (סוג מכשיר, גרסת אפליקציה ודוחות קריסה).</li>
+</ul>
+<p>איננו אוספים או שומרים את מספר כרטיס האשראי המלא שלכם. פרטי הכרטיס מוזנים ישירות אצל ספק הסליקה (ראו סעיף 4).</p>
+
+<h3>2. כיצד אנו משתמשים במידע</h3>
+<ul>
+<li>הפעלת השירות והחשבון שלכם.</li>
+<li>הצגת חנויות בקרבתכם.</li>
+<li>עיבוד ההזמנות, אספקתן ומתן תמיכה.</li>
+<li>המלצות מוצרים מותאמות אישית.</li>
+<li>שליחת עדכוני שירות והזמנות (ניתן לבטל הסכמה להודעות שאינן חיוניות בכל עת).</li>
+<li>שמירה על אבטחה ואבחון תקלות טכניות.</li>
 </ul>
 
-<h2>2. שימוש במידע</h2>
+<h3>3. אבטחת מידע</h3>
+<p>המידע שלכם נשמר באופן מאובטח באמצעות Supabase ומוגן בבקרות גישה והצפנה בעת ההעברה. איננו מוכרים את המידע האישי שלכם. התשלומים מטופלים כולם על ידי ספק סליקה העומד בתקן PCI DSS, כך שליבסי אינה מקבלת או שומרת את מספר הכרטיס המלא.</p>
+
+<h3>4. שירותי צד שלישי</h3>
 <ul>
-<li>שירות</li>
-<li>חנויות קרובות</li>
-<li>עיבוד הזמנות</li>
-<li>המלצות</li>
-<li>עדכונים</li>
+<li><strong>Supabase</strong> — אחסון מסד נתונים, הזדהות וקבצים.</li>
+<li><strong>Allpay / Tranzila</strong> — סליקת תשלומים. פרטי הכרטיס מוזנים בדף התשלום המאובטח של הספק; ליבסי אינה רואה או שומרת אותם.</li>
+<li><strong>Google Firebase</strong> — Cloud Messaging (התראות) ו-Crashlytics (דוחות קריסה ואבחון).</li>
+<li><strong>OpenStreetMap</strong> — הצגת מפות.</li>
+<li><strong>Google Fonts</strong> — גופנים.</li>
 </ul>
 
-<h2>3. אבטחת מידע</h2>
-<p>נשמר בצורה מאובטחת. לא נמכרים נתונים.</p>
+<h3>5. עוגיות וטכנולוגיות דומות</h3>
+<p>האפליקציה ואתר זה משתמשים רק באחסון חיוני הנדרש לשמירת ההתחברות והעדפותיכם. איננו עושים שימוש בעוגיות פרסום או מעקב של צד שלישי.</p>
 
-<h2>6. ביטול והחזר כספי – ליבסי</h2>
+<h3>6. שמירת מידע</h3>
+<p>אנו שומרים את המידע האישי כל עוד החשבון פעיל וכפי שנדרש למתן השירות. רשומות הזמנות ותשלומים עשויות להישמר לתקופה ארוכה יותר כנדרש בחוק (לדוגמה, חובות מס וחשבונאות). בעת מחיקת החשבון, נמחק או ננטרל את זיהוי המידע האישי, אלא אם חלה עלינו חובה חוקית לשמרו.</p>
 
-<h3>1. ביטול הזמנה</h3>
-<p>ניתן לבטל הזמנה תוך 3 שעות מרגע ביצוע ההזמנה דרך האפליקציה.</p>
+<h3>7. העברת מידע בין-לאומית</h3>
+<p>חלק מספקי השירות שלנו (כגון Supabase ו-Google) עשויים לעבד או לאחסן מידע בשרתים מחוץ לישראל. במקרים כאלה אנו נוקטים צעדים להבטיח רמת הגנה נאותה למידע שלכם.</p>
 
-<h3>2. החזר כספי</h3>
-<p>אם הביטול בוצע תוך 3 שעות, יינתן החזר מלא לאמצעי התשלום המקורי.</p>
+<h3>8. פרטיות ילדים</h3>
+<p>ליבסי אינה מיועדת לילדים מתחת לגיל 16. איננו אוספים ביודעין מידע אישי מילדים מתחת לגיל 16. אם נודע לכם שילד מסר לנו מידע אישי, אנא צרו קשר ונמחק אותו.</p>
 
-<h3>3. הזמנות בעיבוד</h3>
-<p>לאחר 3 שעות ההזמנה מועברת לסוחר ולא ניתן לבטל אותה.</p>
+<h3>9. הזכויות שלכם</h3>
+<ul>
+<li>גישה למידע האישי שברשותנו.</li>
+<li>תיקון מידע שגוי.</li>
+<li>מחיקת החשבון והמידע הקשור אליו.</li>
+<li>כיבוי הרשאת המיקום בכל עת דרך הגדרות המכשיר.</li>
+<li>ביטול הסכמה להתראות שאינן חיוניות.</li>
+</ul>
+<p>למימוש זכויות אלו, צרו קשר בפרטים שבסעיף 16. אנו מטפלים במידע אישי בהתאם לחוק הגנת הפרטיות, התשמ"א-1981.</p>
 
-<h3>4. מוצרים פגומים או שגויים</h3>
-<p>יש ליצור קשר עם שירות הלקוחות תוך 48 שעות מקבלת המוצר. לאחר בדיקה יינתן פתרון מתאים.</p>
+<h3>10. שינויים במדיניות</h3>
+<p>ייתכן שנעדכן מדיניות זו מעת לעת. תאריך "עודכן לאחרונה" בראש העמוד משקף את הגרסה העדכנית, ושינויים מהותיים יימסרו בתוך האפליקציה.</p>
 
-<h2>7. הבהרה</h2>
-<p>ליבסי אינה אחראית על מוצרים או משלוחים.</p>
+<h2>תנאי שימוש</h2>
 
-<h2>8. שירות לקוחות</h2>
-<p>אימייל: support@libsee.co<br>טלפון: +97249236660</p>
+<h3>11. שימוש בליבסי</h3>
+<p>ליבסי היא פלטפורמת מרקטפלייס. המוצרים נמכרים על ידי סוחרים עצמאיים ("סוחרים") ולא על ידי Libsee Marketplace LTD. בעת ביצוע הזמנה, חוזה המכר עבור המוצר הוא מול הסוחר. ליבסי מסייעת בגילוי, בהזמנה ובתשלום.</p>
+<ul>
+<li>עליכם למסור פרטי חשבון מדויקים ולהיות כשירים משפטית לבצע רכישה.</li>
+<li>הסוחרים אחראים לתיאורי המוצרים, למחירים, לזמינות, לרישוי (במידת הצורך), לאספקה ולמשלוח.</li>
+<li>אתם מתחייבים שלא לעשות שימוש לרעה באפליקציה, לא לנסות גישה בלתי מורשית ולא להשתמש בה למטרות בלתי חוקיות.</li>
+<li>המחירים וזמינות המוצרים נקבעים על ידי הסוחרים ועשויים להשתנות.</li>
+</ul>
+<p>תנאים אלו כפופים לדיני מדינת ישראל, וסכסוכים יידונו בבתי המשפט המוסמכים בישראל.</p>
+
+<h2>מדיניות ביטול והחזר כספי</h2>
+
+<h3>12. ביטול הזמנה</h3>
+<p>ניתן לבטל הזמנה תוך <strong>3 שעות</strong> מרגע ביצועה דרך האפליקציה. לאחר 3 שעות ההזמנה מועברת לסוחר לעיבוד ולא ניתן עוד לבטלה דרך האפליקציה.</p>
+
+<h3>13. החזרים והחזרות</h3>
+<ul>
+<li>בביטול תוך 3 שעות יינתן <strong>החזר מלא</strong> לאמצעי התשלום המקורי.</li>
+<li>לכל מוצר יש גם <strong>חלון החזרה שנקבע על ידי הסוחר</strong>, המוצג בעמוד המוצר לפני הרכישה: <em>לא ניתן להחזרה, שבוע, שבועיים או חודש</em> ממועד הקבלה. פריטים המזכים בהחזרה שיוחזרו בתוך חלון זה יזוכו לאחר אישור ההחזרה.</li>
+<li>ההחזרים מבוצעים לאמצעי התשלום המקורי דרך ספק הסליקה ועשויים להימשך מספר ימי עסקים.</li>
+</ul>
+
+<h3>14. מוצרים פגומים או שגויים</h3>
+<p>אם קיבלתם מוצר פגום, ניזוק או שגוי, יש ליצור קשר עם שירות הלקוחות תוך <strong>48 שעות</strong> מקבלת ההזמנה. לאחר בדיקה יינתן החזר או פתרון מתאים. אין בכך כדי לפגוע בזכויותיכם לפי חוק הגנת הצרכן.</p>
+
+<h3>15. הבהרה</h3>
+<p>ליבסי מספקת את פלטפורמת המרקטפלייס בלבד ואינה אחראית לאיכות המוצר, לזמינות, לאספקה או למשלוח. הסוחרים אחראים באופן מלא למוצרים שהם מוכרים.</p>
+
+<h2>16. פרטי העסק ויצירת קשר</h2>
+<div class="contact-box">
+<p><strong>Libsee Marketplace LTD</strong><br>
+כתובת: מרים אל־עדרא, סח'נין 30810, ישראל<br>
+אימייל: <a href="mailto:support@libsee.co">support@libsee.co</a><br>
+טלפון / וואטסאפ: <a href="tel:+97249236660">+972-4-923-6660</a></p>
+</div>
 
 </div>
 
 <!-- ================= ARABIC ================= -->
 <div id="ar" class="section rtl">
 
-<p><strong>شركة Libsee Marketplace LTD</strong> تدير تطبيق LIBSEE...</p>
+<p class="muted">آخر تحديث: 1 يوليو 2026</p>
 
-<h2>1. المعلومات التي نجمعها</h2>
+<p><strong>شركة Libsee Marketplace LTD</strong> تُشغّل تطبيق LIBSEE ("ليبسي"، "نحن"). ليبسي هي منصة سوق تربط المتسوقين بمتاجر الملابس المحلية، وتتيح للمستخدمين اكتشاف المتاجر القريبة وطلب الملابس والمنتجات المرتبطة بها. توضّح هذه الصفحة سياسة الخصوصية وشروط الخدمة وسياسة الإلغاء والاسترداد الخاصة بنا.</p>
+
+<h2>سياسة الخصوصية</h2>
+
+<h3>1. المعلومات التي نجمعها</h3>
 <ul>
-<li>معلومات الحساب</li>
-<li>بيانات الموقع</li>
-<li>الطلبات</li>
-<li>معلومات الجهاز</li>
+<li><strong>معلومات الحساب:</strong> الاسم والبريد الإلكتروني ورقم الهاتف.</li>
+<li><strong>تفاصيل الملف الشخصي الاختيارية:</strong> الجنس والعمر والطول والوزن (تُستخدم فقط لتحسين توصيات المقاسات والمنتجات، ويمكن تركها فارغة).</li>
+<li><strong>بيانات الموقع:</strong> موقع جهازك، لعرض المتاجر القريبة (أثناء استخدام التطبيق فقط، ويمكن تعطيله من إعدادات الجهاز).</li>
+<li><strong>عناوين التوصيل</strong> التي تضيفها للطلبات.</li>
+<li><strong>قائمة الرغبات وسجلّ الطلبات.</strong></li>
+<li><strong>رمز الإشعارات (Push)</strong> لإرسال تحديثات الطلبات والحساب.</li>
+<li><strong>معلومات الجهاز والتشخيص</strong> (نوع الجهاز وإصدار التطبيق وتقارير الأعطال).</li>
+</ul>
+<p>نحن لا نجمع أو نخزّن رقم بطاقتك الائتمانية الكامل. تُدخَل بيانات البطاقة مباشرةً لدى مزوّد الدفع (انظر القسم 4).</p>
+
+<h3>2. كيف نستخدم المعلومات</h3>
+<ul>
+<li>تقديم الخدمة وتشغيل حسابك.</li>
+<li>عرض المتاجر القريبة منك.</li>
+<li>معالجة طلباتك وتنفيذها ودعمها.</li>
+<li>تقديم توصيات منتجات مخصّصة.</li>
+<li>إرسال تحديثات الخدمة والطلبات (يمكنك إلغاء الاشتراك في الرسائل غير الأساسية في أي وقت).</li>
+<li>الحفاظ على الأمان وتشخيص المشكلات التقنية.</li>
 </ul>
 
-<h2>2. استخدام المعلومات</h2>
+<h3>3. أمان البيانات</h3>
+<p>تُخزَّن بياناتك بشكل آمن باستخدام Supabase وتُحمى بضوابط الوصول والتشفير أثناء النقل. نحن لا نبيع بياناتك الشخصية. تُعالَج جميع المدفوعات من قِبل مزوّد دفع متوافق مع معيار PCI DSS، لذا فإن ليبسي لا تتلقّى أو تخزّن رقم بطاقتك الكامل.</p>
+
+<h3>4. خدمات الطرف الثالث</h3>
 <ul>
-<li>تقديم الخدمة</li>
-<li>عرض المتاجر القريبة</li>
-<li>معالجة الطلبات</li>
-<li>التوصيات</li>
-<li>التحديثات</li>
+<li><strong>Supabase</strong> — استضافة قاعدة البيانات والمصادقة وتخزين الملفات.</li>
+<li><strong>Allpay / Tranzila</strong> — معالجة المدفوعات. تُدخَل بيانات البطاقة في صفحة الدفع الآمنة لدى المزوّد، ولا تراها ليبسي أو تخزّنها.</li>
+<li><strong>Google Firebase</strong> — Cloud Messaging (الإشعارات) وCrashlytics (تقارير الأعطال والتشخيص).</li>
+<li><strong>OpenStreetMap</strong> — عرض الخرائط.</li>
+<li><strong>Google Fonts</strong> — الخطوط.</li>
 </ul>
 
-<h2>3. الأمان</h2>
-<p>يتم تخزين البيانات بشكل آمن.</p>
+<h3>5. ملفات تعريف الارتباط والتقنيات المشابهة</h3>
+<p>يستخدم التطبيق وهذا الموقع فقط التخزين الأساسي اللازم لإبقائك مسجّل الدخول وتذكّر تفضيلاتك. لا نستخدم ملفات تعريف ارتباط للإعلانات أو للتتبّع من طرف ثالث.</p>
 
-<h2>6. سياسة الإلغاء والاسترداد – ليبسي</h2>
+<h3>6. الاحتفاظ بالبيانات</h3>
+<p>نحتفظ ببياناتك الشخصية طالما كان حسابك نشطًا وبالقدر اللازم لتقديم الخدمة. قد يتم الاحتفاظ بسجلّات الطلبات والمعاملات لفترة أطول عند الاقتضاء بموجب القانون (مثل الالتزامات الضريبية والمحاسبية). عند حذف حسابك، نحذف بياناتك الشخصية أو نزيل هويتها ما لم يُلزمنا القانون بالاحتفاظ بها.</p>
 
-<h3>1. إلغاء الطلب</h3>
-<p>يمكن للعملاء إلغاء الطلب خلال 3 ساعات من وقت تقديم الطلب عبر التطبيق.</p>
+<h3>7. نقل البيانات دوليًا</h3>
+<p>قد يقوم بعض مزوّدي الخدمة لدينا (مثل Supabase وGoogle) بمعالجة أو تخزين البيانات على خوادم خارج إسرائيل. وعند حدوث ذلك، نتّخذ خطوات لضمان مستوى حماية ملائم لبياناتك.</p>
 
-<h3>2. الاسترداد</h3>
-<p>إذا تم الإلغاء خلال 3 ساعات، سيتم استرداد كامل المبلغ إلى وسيلة الدفع الأصلية.</p>
+<h3>8. خصوصية الأطفال</h3>
+<p>ليبسي غير مخصّص للأطفال دون سن 16 عامًا. نحن لا نجمع عن قصد بيانات شخصية من أطفال دون سن 16. إذا اعتقدت أن طفلًا قد زوّدنا ببيانات شخصية، فيرجى التواصل معنا وسنحذفها.</p>
 
-<h3>3. الطلبات قيد المعالجة</h3>
-<p>بعد 3 ساعات يتم إرسال الطلب إلى التاجر ولا يمكن إلغاؤه.</p>
+<h3>9. حقوقك</h3>
+<ul>
+<li>الوصول إلى بياناتك الشخصية الموجودة لدينا.</li>
+<li>تصحيح البيانات غير الدقيقة.</li>
+<li>حذف حسابك والبيانات المرتبطة به.</li>
+<li>تعطيل الوصول إلى الموقع في أي وقت من إعدادات جهازك.</li>
+<li>إلغاء الاشتراك في الإشعارات غير الأساسية.</li>
+</ul>
+<p>لممارسة أيٍّ من هذه الحقوق، تواصل معنا عبر التفاصيل في القسم 16. نتعامل مع البيانات الشخصية وفقًا لقانون حماية الخصوصية الإسرائيلي لعام 1981 (5741).</p>
 
-<h3>4. المنتجات التالفة أو الخاطئة</h3>
-<p>يجب التواصل مع الدعم خلال 48 ساعة من الاستلام. سيتم تقديم حل مناسب بعد المراجعة.</p>
+<h3>10. التغييرات على هذه السياسة</h3>
+<p>قد نُحدّث هذه السياسات من وقت لآخر. يعكس تاريخ "آخر تحديث" أعلى الصفحة أحدث نسخة، وسيتم إبلاغ التغييرات الجوهرية داخل التطبيق.</p>
 
-<h2>7. إخلاء المسؤولية</h2>
-<p>ليست Libsee مسؤولة عن المنتجات أو التوصيل أو الجودة.</p>
+<h2>شروط الخدمة</h2>
 
-<h2>8. الدعم</h2>
-<p>support@libsee.co<br>+97249236660</p>
+<h3>11. استخدام ليبسي</h3>
+<p>ليبسي هي منصة سوق. تُباع المنتجات من قِبل تجّار مستقلين ("التجّار") وليس من قِبل شركة Libsee Marketplace LTD. عند تقديم طلب، يكون عقد البيع الخاص بالمنتج مع التاجر. تسهّل ليبسي عملية الاكتشاف والطلب والدفع.</p>
+<ul>
+<li>يجب تقديم معلومات حساب دقيقة وأن تكون مؤهّلًا قانونيًا لإتمام عملية الشراء.</li>
+<li>التجّار مسؤولون عن أوصاف منتجاتهم وأسعارها وتوافرها والترخيص (عند الحاجة) والتنفيذ والتوصيل.</li>
+<li>توافق على عدم إساءة استخدام التطبيق أو محاولة الوصول غير المصرّح به أو استخدامه لأغراض غير قانونية.</li>
+<li>يحدّد التجّار الأسعار وتوافر المنتجات وقد تتغيّر.</li>
+</ul>
+<p>تخضع هذه الشروط لقوانين دولة إسرائيل، وتخضع النزاعات للمحاكم المختصّة في إسرائيل.</p>
+
+<h2>سياسة الإلغاء والاسترداد</h2>
+
+<h3>12. إلغاء الطلب</h3>
+<p>يمكنك إلغاء الطلب خلال <strong>3 ساعات</strong> من تقديمه عبر التطبيق. بعد 3 ساعات يُرسَل الطلب إلى التاجر للمعالجة ولا يمكن إلغاؤه عبر التطبيق بعد ذلك.</p>
+
+<h3>13. الاسترداد والإرجاع</h3>
+<ul>
+<li>في حال الإلغاء خلال 3 ساعات، يتم <strong>استرداد كامل المبلغ</strong> إلى وسيلة الدفع الأصلية.</li>
+<li>لكل منتج أيضًا <strong>فترة إرجاع يحدّدها التاجر</strong>، تظهر في صفحة المنتج قبل الشراء: <em>غير قابل للإرجاع، أسبوع، أسبوعان، أو شهر</em> من الاستلام. تُستردّ قيمة المنتجات المؤهّلة التي تُرجَع خلال تلك الفترة بعد تأكيد الإرجاع.</li>
+<li>تُجرى عمليات الاسترداد إلى وسيلة الدفع الأصلية عبر مزوّد الدفع وقد تستغرق عدة أيام عمل حتى تظهر.</li>
+</ul>
+
+<h3>14. المنتجات التالفة أو الخاطئة</h3>
+<p>إذا استلمت منتجًا تالفًا أو معطوبًا أو خاطئًا، تواصل مع دعم العملاء خلال <strong>48 ساعة</strong> من استلام الطلب. بعد المراجعة، سيتم تقديم استرداد أو حل مناسب. لا يؤثّر ذلك على حقوقك بموجب قوانين حماية المستهلك المعمول بها.</p>
+
+<h3>15. إخلاء المسؤولية</h3>
+<p>توفّر ليبسي منصة السوق فقط وليست مسؤولة عن جودة المنتج أو توافره أو تنفيذه أو توصيله. التجّار مسؤولون مسؤولية كاملة عن المنتجات التي يبيعونها.</p>
+
+<h2>16. تفاصيل النشاط التجاري والتواصل</h2>
+<div class="contact-box">
+<p><strong>Libsee Marketplace LTD</strong><br>
+العنوان: مريم العذراء، سخنين 30810، إسرائيل<br>
+البريد الإلكتروني: <a href="mailto:support@libsee.co">support@libsee.co</a><br>
+الهاتف / واتساب: <a href="tel:+97249236660">+972-4-923-6660</a></p>
+</div>
 
 </div>
 
@@ -239,7 +438,11 @@ footer {
 <script>
 function show(lang){
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('header button').forEach(b => b.classList.remove('active-btn'));
   document.getElementById(lang).classList.add('active');
+  document.getElementById('btn-' + lang).classList.add('active-btn');
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'en') ? 'ltr' : 'rtl';
 }
 </script>
 
